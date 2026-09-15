@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Heavens Bartending: Private Cocktail Service</title>
+<meta name="description" content="Heavens Bartending brings full craft cocktail service to private parties, weddings, and events in the Miami area. Every booking includes fresh garnish, drinks made to order, and complete setup and cleanup.">
+<meta property="og:title" content="Heavens Bartending: Private Cocktail Service">
+<meta property="og:description" content="Full craft cocktail service for private parties, weddings, and events.">
+<meta property="og:type" content="website">
+<meta name="apple-mobile-web-app-title" content="Heavens Bartending">
+<meta name="theme-color" content="#15130E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='16' fill='%2315130E'/%3E%3Cpath d='M30 28 L70 28 L70 34 L54 58 L54 74 L62 74 L62 80 L38 80 L38 74 L46 74 L46 58 L30 34 Z' fill='%23D69A44'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,500;1,9..144,600&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --linen:#15130E;
+    --linen-deep:#0E0C08;
+    --ink:#F3EFE4;
+    --ink-soft:#B4AC99;
+    --bottle:#28392C;
+    --bottle-deep:#0F1811;
+    --amber:#D69A44;
+    --amber-soft:#E9CFA0;
+    --berry:#B5636A;
+    --line:rgba(243,239,228,0.14);
+    --radius:2px;
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box;}
+
+  html{scroll-behavior:smooth;}
+
+  body{
+    background:var(--linen);
+    color:var(--ink);
+    font-family:'Work Sans', sans-serif;
+    font-weight:400;
+    line-height:1.6;
+    overflow-x:hidden;
+  }
+
+  h1,h2,h3,.serif{
+    font-family:'Fraunces', serif;
+    font-weight:500;
+    letter-spacing:-0.01em;
+    color:var(--ink);
+  }
+
+  a{color:inherit;text-decoration:none;}
+
+  img{display:block;max-width:100%;}
+
+  .label{
+    font-size:0.72rem;
+    letter-spacing:0.18em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    font-weight:500;
+  }
+
+  .wrap{
+    max-width:1180px;
+    margin:0 auto;
+    padding:0 32px;
+  }
+
+  /* ---------- NAV ---------- */
+  header{
+    position:sticky;
+    top:0;
+    z-index:50;
+    background:rgba(21,19,14,0.88);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  nav.wrap{
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    height:78px;
+    flex-wrap:nowrap;
+    gap:16px;
+  }
+  .logo{
+    font-family:'Fraunces', serif;
+    font-size:1.15rem;
+    letter-spacing:0.02em;
+    display:flex;
+    align-items:baseline;
+    gap:8px;
+    white-space:nowrap;
+    flex-shrink:1;
+    min-width:0;
+    overflow:hidden;
+    text-overflow:ellipsis;
+  }
+  .logo .dot{color:var(--amber);}
+  .nav-links{
+    position:absolute;
+    top:calc(100% + 10px);
+    right:0;
+    background:var(--linen);
+    border:1px solid var(--line);
+    border-radius:8px;
+    box-shadow:0 12px 32px rgba(0,0,0,0.45);
+    display:flex;
+    flex-direction:column;
+    align-items:stretch;
+    padding:14px;
+    gap:4px;
+    font-size:0.95rem;
+    min-width:200px;
+    opacity:0;
+    transform:translateY(-8px);
+    pointer-events:none;
+    transition:opacity .22s ease, transform .22s ease;
+    z-index:60;
+  }
+  .nav-links.open{opacity:1; transform:translateY(0); pointer-events:auto;}
+  .nav-links a{
+    position:relative;
+    padding:10px 12px;
+    border-radius:5px;
+    transition:background .2s ease;
+  }
+  .nav-links a:not(.ig):hover{background:rgba(214,154,68,0.1); color:var(--amber);}
+  .ig{
+    display:flex;
+    align-items:center;
+    gap:6px;
+    border:1px solid var(--line);
+    border-radius:6px;
+    margin-top:6px;
+    transition:border-color .25s ease, background .25s ease;
+  }
+  .ig:hover{border-color:var(--amber); background:var(--amber); color:var(--linen-deep);}
+  .nav-toggle{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:38px; height:38px;
+    flex-shrink:0;
+    background:none;border:none;
+    cursor:pointer;
+    padding:0;
+    color:var(--amber);
+    transition:color .2s ease, opacity .2s ease;
+  }
+  .nav-toggle:hover{opacity:0.8;}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    padding:88px 0 60px;
+    position:relative;
+  }
+  .hero .wrap{
+    display:grid;
+    grid-template-columns:1.05fr 0.95fr;
+    gap:64px;
+    align-items:center;
+  }
+  .hero h1{
+    font-size:clamp(2.6rem, 5vw, 4.1rem);
+    line-height:1.06;
+    margin-bottom:26px;
+  }
+  .hero h1 em{
+    font-style:italic;
+    color:var(--amber);
+    font-weight:500;
+  }
+  .hero p.lede{
+    font-size:1.08rem;
+    color:var(--ink-soft);
+    max-width:440px;
+    margin-bottom:34px;
+  }
+  .hero-ctas{display:flex;align-items:center;gap:22px;flex-wrap:wrap;}
+
+  .btn{
+    display:inline-block;
+    background:var(--amber);
+    color:var(--linen-deep);
+    padding:15px 30px;
+    font-size:0.85rem;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    border-radius:999px;
+    border:1px solid var(--amber);
+    cursor:pointer;
+    transition:background .25s ease, color .25s ease, transform .2s ease;
+  }
+  .btn:hover{background:transparent; color:var(--amber); transform:translateY(-1px);}
+  .btn.outline{
+    background:transparent;
+    color:var(--ink);
+    border:1px solid var(--line);
+  }
+  .btn.outline:hover{border-color:var(--amber); color:var(--amber);}
+
+  .hero-visual{
+    position:relative;
+    aspect-ratio:4/5;
+    border-radius:6px;
+    overflow:hidden;
+    background:var(--linen-deep);
+  }
+  .hero-visual .photo-frame{
+    position:relative;
+    width:100%; height:100%;
+    border-radius:4px;
+    overflow:hidden;
+  }
+  .hero-visual img{
+    width:100%;height:100%;object-fit:cover;
+    display:block;
+  }
+  .hero-visual .scene-wave{
+    position:absolute;
+    left:0; right:0; bottom:0;
+    height:38%;
+    pointer-events:none;
+    background:
+      linear-gradient(180deg, rgba(24,52,64,0) 0%, rgba(20,46,58,0.55) 55%, rgba(14,34,44,0.82) 100%);
+  }
+  .hero-visual .scene-wave svg{
+    position:absolute;
+    left:0; right:0; bottom:0;
+    width:100%; height:60px;
+    opacity:0.55;
+  }
+  .hero-visual .glow-spot{
+    position:absolute;
+    top:8%; left:10%;
+    width:120px; height:120px;
+    border-radius:50%;
+    background:radial-gradient(circle, rgba(255,214,150,0.9) 0%, rgba(255,214,150,0) 70%);
+    filter:blur(6px);
+    opacity:0.8;
+    pointer-events:none;
+    animation:glowPulse 6s ease-in-out infinite;
+  }
+  @keyframes glowPulse{
+    0%,100%{opacity:0.7; transform:scale(1);}
+    50%{opacity:1; transform:scale(1.08);}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .hero-visual .glow-spot{animation:none;}
+  }
+  .peel{
+    position:absolute;
+    top:-40px; right:-60px;
+    width:220px; height:220px;
+    opacity:0.9;
+    animation:drift 14s ease-in-out infinite;
+    pointer-events:none;
+  }
+  @keyframes drift{
+    0%,100%{transform:rotate(0deg) translate(0,0);}
+    50%{transform:rotate(14deg) translate(-6px,10px);}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .peel{animation:none;}
+  }
+
+  @media (max-width:900px){
+    .hero .wrap{grid-template-columns:1fr; gap:40px;}
+    .hero{padding-top:56px;}
+    .hero-visual{order:-1; aspect-ratio:16/10;}
+  }
+
+  /* ---------- TICKER ---------- */
+  .ticker-band{
+    background:var(--bottle);
+    color:var(--amber-soft);
+    overflow:hidden;
+    white-space:nowrap;
+    border-top:1px solid var(--bottle-deep);
+    border-bottom:1px solid var(--bottle-deep);
+  }
+  .ticker-track{
+    display:inline-flex;
+    align-items:center;
+    gap:48px;
+    padding:16px 0;
+    animation:scroll 32s linear infinite;
+  }
+  @media (prefers-reduced-motion:reduce){.ticker-track{animation:none;}}
+  .ticker-track span{
+    font-family:'Fraunces', serif;
+    font-style:italic;
+    font-size:1rem;
+    letter-spacing:0.02em;
+    color:var(--ink);
+  }
+  .ticker-track span.dim{color:var(--amber-soft); font-style:normal; font-family:'Work Sans'; font-size:0.78rem; letter-spacing:0.14em; text-transform:uppercase;}
+  @keyframes scroll{
+    0%{transform:translateX(0);}
+    100%{transform:translateX(-50%);}
+  }
+
+  /* ---------- ABOUT ---------- */
+  .about{
+    padding:110px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .about .wrap{
+    display:grid;
+    grid-template-columns:0.9fr 1.1fr;
+    gap:72px;
+  }
+  .about h2{
+    font-size:clamp(1.9rem,3vw,2.6rem);
+    line-height:1.15;
+    margin:14px 0 22px;
+  }
+  .about p{color:var(--ink-soft); max-width:480px; margin-bottom:16px;}
+  .about-sign{
+    font-family:'Fraunces', serif;
+    font-style:italic;
+    font-size:1.3rem;
+    color:var(--amber);
+    margin-top:22px;
+  }
+
+  .services{display:flex; flex-direction:column; gap:0;}
+  .service-row{
+    display:grid;
+    grid-template-columns:44px 1fr;
+    gap:20px;
+    padding:26px 0;
+    border-top:1px solid var(--line);
+  }
+  .service-row:last-child{border-bottom:1px solid var(--line);}
+  .service-row svg{width:30px;height:30px;flex-shrink:0;}
+  .service-row h3{font-size:1.15rem; font-weight:500; margin-bottom:6px;}
+  .service-row p{color:var(--ink-soft); font-size:0.95rem; max-width:400px;}
+
+  @media (max-width:900px){
+    .about .wrap{grid-template-columns:1fr; gap:44px;}
+  }
+
+  /* ---------- GALLERY ---------- */
+  .gallery{padding:110px 0; background:var(--linen-deep);}
+  .section-head{
+    display:flex;
+    align-items:baseline;
+    justify-content:space-between;
+    margin-bottom:48px;
+    flex-wrap:wrap;
+    gap:12px;
+  }
+  .section-head h2{font-size:clamp(1.9rem,3vw,2.6rem);}
+
+  .grid-gallery{
+    display:grid;
+    grid-template-columns:repeat(6, 1fr);
+    grid-auto-rows:130px;
+    gap:14px;
+  }
+  .grid-gallery figure{
+    overflow:hidden;
+    border-radius:4px;
+    position:relative;
+  }
+  .grid-gallery img{
+    width:100%;height:100%;object-fit:cover;
+    transition:transform .6s ease;
+  }
+  .grid-gallery figure:hover img{transform:scale(1.06);}
+  .g1{grid-column:span 3; grid-row:span 3;}
+  .g2{grid-column:span 3; grid-row:span 2;}
+  .g3{grid-column:span 2; grid-row:span 2;}
+  .g4{grid-column:span 2; grid-row:span 2;}
+  .g5{grid-column:span 2; grid-row:span 2;}
+  .g6{grid-column:span 3; grid-row:span 2;}
+  .g7{grid-column:span 3; grid-row:span 2;}
+
+  @media (max-width:900px){
+    .grid-gallery{grid-template-columns:repeat(2,1fr); grid-auto-rows:160px;}
+    .g1,.g2,.g3,.g4,.g5,.g6,.g7{grid-column:span 1; grid-row:span 2;}
+  }
+
+  /* ---------- MENU ---------- */
+  .menu{padding:110px 0;}
+  .menu-list{
+    border-top:1px solid var(--line);
+    max-width:820px;
+  }
+  .menu-item{
+    display:grid;
+    grid-template-columns:32px 1fr auto;
+    gap:20px;
+    align-items:start;
+    padding:30px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .menu-item svg{width:26px;height:26px; margin-top:4px;}
+  .menu-item h3{font-size:1.3rem; font-weight:500; margin-bottom:6px;}
+  .menu-item .ingredients{color:var(--ink-soft); font-size:0.92rem;}
+  .menu-item .garnish{
+    text-align:right;
+    font-size:0.72rem;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    color:var(--amber);
+    white-space:nowrap;
+    padding-top:8px;
+  }
+
+  /* ---------- PACKAGES ---------- */
+  .packages{padding:110px 0; background:var(--linen-deep);}
+  .packages-intro{
+    color:var(--ink-soft);
+    max-width:640px;
+    margin-bottom:48px;
+    font-size:1rem;
+  }
+  .package-grid{
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap:18px;
+  }
+  .package-card{
+    border:1px solid var(--line);
+    border-radius:4px;
+    padding:32px 26px;
+    display:flex;
+    flex-direction:column;
+    background:rgba(255,255,255,0.015);
+    transition:border-color .25s ease, transform .25s ease;
+  }
+  .package-card:hover{border-color:var(--amber); transform:translateY(-3px);}
+  .package-card.featured{
+    border-color:var(--amber);
+    background:rgba(214,154,68,0.06);
+  }
+  .package-card h3{
+    font-size:1.3rem;
+    font-weight:500;
+    margin:8px 0 14px;
+  }
+  .package-price{
+    font-family:'Fraunces', serif;
+    font-size:1.5rem;
+    color:var(--amber);
+    margin-bottom:22px;
+  }
+  .package-price span{
+    font-family:'Work Sans';
+    font-size:0.8rem;
+    color:var(--ink-soft);
+    font-weight:400;
+  }
+  .package-card ul{
+    list-style:none;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    margin-bottom:24px;
+    flex-grow:1;
+  }
+  .package-card li{
+    font-size:0.9rem;
+    color:var(--ink-soft);
+    padding-left:18px;
+    position:relative;
+  }
+  .package-card li::before{
+    content:'';
+    position:absolute;
+    left:0; top:8px;
+    width:6px; height:6px;
+    border-radius:50%;
+    background:var(--amber);
+  }
+  .package-extra{
+    font-size:0.78rem;
+    letter-spacing:0.04em;
+    color:var(--ink-soft);
+    border-top:1px solid var(--line);
+    padding-top:14px;
+  }
+  .packages-note{
+    margin-top:40px;
+    font-size:0.85rem;
+    color:var(--ink-soft);
+    max-width:720px;
+  }
+  .packages-note a{color:var(--amber); border-bottom:1px solid rgba(214,154,68,0.4);}
+  .packages-note a:hover{border-color:var(--amber);}
+  .disclaimer{
+    margin-top:20px;
+    max-width:720px;
+    border:1px solid rgba(214,154,68,0.3);
+    background:rgba(214,154,68,0.06);
+    border-radius:4px;
+    padding:16px 20px;
+  }
+  .disclaimer p{
+    font-size:0.85rem;
+    color:var(--ink-soft);
+    line-height:1.6;
+  }
+  .disclaimer strong{color:var(--amber); font-weight:500;}
+  .disclaimer a{color:var(--amber); border-bottom:1px solid rgba(214,154,68,0.4);}
+  .disclaimer a:hover{border-color:var(--amber);}
+
+  @media (max-width:900px){
+    .package-grid{grid-template-columns:1fr 1fr; gap:16px;}
+  }
+  @media (max-width:600px){
+    .package-grid{grid-template-columns:1fr;}
+    .packages{padding:64px 0;}
+  }
+
+  /* ---------- FAQ ---------- */
+  .faq{padding:110px 0; background:var(--linen-deep);}
+  .faq-list{
+    max-width:820px;
+    border-top:1px solid var(--line);
+  }
+  .faq-item{
+    padding:28px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .faq-item h3{
+    font-size:1.1rem;
+    font-weight:500;
+    margin-bottom:10px;
+    color:var(--ink);
+  }
+  .faq-item p{
+    color:var(--ink-soft);
+    font-size:0.95rem;
+    max-width:640px;
+  }
+
+  /* ---------- INQUIRE ---------- */
+  .inquire{
+    background:var(--bottle);
+    color:var(--linen);
+    padding:110px 0;
+  }
+  .inquire .wrap{
+    display:grid;
+    grid-template-columns:0.85fr 1.15fr;
+    gap:64px;
+  }
+  .inquire h2{color:var(--linen); font-size:clamp(1.9rem,3vw,2.6rem); margin-bottom:18px;}
+  .inquire p{color:var(--amber-soft); max-width:380px; margin-bottom:22px;}
+  .inquire .meta{margin-top:40px; font-size:0.9rem; color:var(--amber-soft);}
+  .inquire .meta a{border-bottom:1px solid rgba(228,196,148,0.4);}
+  .inquire .meta a:hover{border-color:var(--linen); color:var(--linen);}
+
+  form{display:flex; flex-direction:column; gap:20px;}
+  .field-row{display:grid; grid-template-columns:1fr 1fr; gap:20px;}
+  label{
+    display:block;
+    font-size:0.72rem;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    color:var(--amber-soft);
+    margin-bottom:8px;
+  }
+  input, textarea{
+    width:100%;
+    background:transparent;
+    border:none;
+    border-bottom:1px solid rgba(247,244,236,0.3);
+    color:var(--linen);
+    font-family:'Work Sans';
+    font-size:1rem;
+    padding:10px 2px;
+    transition:border-color .25s ease;
+  }
+  input::placeholder, textarea::placeholder{color:rgba(247,244,236,0.35);}
+  input:focus, textarea:focus{
+    outline:none;
+    border-color:var(--amber);
+  }
+  textarea{resize:vertical; min-height:90px;}
+
+  .submit-row{
+    display:flex;
+    align-items:center;
+    gap:20px;
+    margin-top:8px;
+    flex-wrap:wrap;
+  }
+  .submit-row .btn{background:var(--amber); border-color:var(--amber); color:var(--bottle-deep); font-weight:500;}
+  .submit-row .btn:hover{background:transparent; color:var(--amber);}
+  .form-note{font-size:0.82rem; color:rgba(247,244,236,0.55);}
+  .success-msg{
+    display:none;
+    font-size:0.92rem;
+    color:var(--amber-soft);
+    border:1px solid rgba(228,196,148,0.4);
+    padding:14px 18px;
+    border-radius:4px;
+  }
+  .success-msg.show{display:block;}
+
+  @media (max-width:900px){
+    .inquire .wrap{grid-template-columns:1fr; gap:40px;}
+    .field-row{grid-template-columns:1fr;}
+  }
+
+  /* ---------- FOOTER ---------- */
+  footer{padding:48px 0; }
+  footer .wrap{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:16px;
+  }
+  footer .logo{font-size:1rem;}
+  footer .foot-links{
+    display:flex; gap:26px; font-size:0.85rem; color:var(--ink-soft);
+  }
+  footer .foot-links a:hover{color:var(--bottle);}
+  footer .copy{font-size:0.78rem; color:var(--ink-soft);}
+
+  /* ---------- SMALL PHONES ---------- */
+  @media (max-width:600px){
+    .wrap{padding:0 20px;}
+    .hero{padding:44px 0 40px;}
+    .about, .gallery, .menu, .inquire{padding:64px 0;}
+    .hero-ctas{gap:14px;}
+    .grid-gallery{grid-template-columns:repeat(2,1fr); grid-auto-rows:130px; gap:10px;}
+    .menu-item{
+      grid-template-columns:26px 1fr;
+      row-gap:6px;
+    }
+    .menu-item .garnish{
+      grid-column:2 / -1;
+      text-align:left;
+      padding-top:0;
+    }
+    .service-row{grid-template-columns:36px 1fr; gap:16px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="wrap">
+    <a href="#top" class="logo">HEAVENS<span class="dot">•</span>BARTENDING</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+      <svg id="navIcon" width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round">
+        <line x1="2" y1="6" x2="20" y2="6"></line>
+        <line x1="2" y1="11" x2="20" y2="11"></line>
+        <line x1="2" y1="16" x2="20" y2="16"></line>
+      </svg>
+    </button>
+    <div class="nav-links" id="navLinks">
+      <a href="#about">About</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#menu">Serves</a>
+      <a href="#packages">Bar Menu</a>
+      <a href="#faq">FAQ</a>
+      <a href="#inquire">Inquire</a>
+      <a class="ig" href="https://instagram.com/Heavensbartending" target="_blank" rel="noopener">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        @Heavensbartending
+      </a>
+    </div>
+  </nav>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <p class="label" style="margin-bottom:18px;">Private Bar Service · Based &amp; Booking Locally</p>
+        <h1>Great parties start with a <em>proper</em> pour.</h1>
+        <p class="lede">Heavens Bartending brings full craft cocktail service to your event, whether it's a backyard birthday, a block party, a wedding, or a black tie affair. Every glass is made with fresh juice, real garnish, and a drink built to order. You host. We tend bar.</p>
+        <div class="hero-ctas">
+          <a href="#inquire" class="btn">Request Your Date</a>
+          <a href="#menu" class="btn outline">See the Serves</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="photo-frame">
+          <img src="https://images.unsplash.com/photo-1765227548954-55aa7cfc498e?auto=format&fit=crop&w=1200&q=80" alt="Cocktail garnished with orange slice and rosemary sprig">
+        </div>
+        <svg class="peel" viewBox="0 0 200 200" fill="none">
+          <path d="M100 20 C 140 20, 170 50, 170 90 C 170 130, 140 160, 100 160" stroke="#C4872F" stroke-width="3" stroke-linecap="round" opacity="0.55"/>
+          <path d="M100 40 C 128 40, 150 62, 150 90 C 150 118, 128 140, 100 140" stroke="#C4872F" stroke-width="2" stroke-linecap="round" opacity="0.35"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- TICKER -->
+  <div class="ticker-band">
+    <div class="ticker-track" id="tickerTrack">
+      <span class="dim">Fresh Citrus</span><span>&#10022;</span>
+      <span>Hand Cut Garnish</span><span class="dim">&#8226;</span>
+      <span class="dim">Clear Ice</span><span>&#10022;</span>
+      <span>Any Occasion, Any Crowd</span><span class="dim">&#8226;</span>
+      <span class="dim">Full Setup &amp; Cleanup</span><span>&#10022;</span>
+      <span>Fresh Citrus</span><span class="dim">&#8226;</span>
+      <span class="dim">Hand Cut Garnish</span><span>&#10022;</span>
+      <span>Clear Ice</span><span class="dim">&#8226;</span>
+      <span class="dim">Any Occasion, Any Crowd</span><span>&#10022;</span>
+      <span>Full Setup &amp; Cleanup</span><span class="dim">&#8226;</span>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="wrap">
+      <div>
+        <p class="label">Behind the Bar</p>
+        <h2>The bar, done right.</h2>
+        <p>Heavens Bartending was built around a simple idea: private events deserve a real bar, not a folding table and a bag of limes. Every booking starts with a conversation about what you're actually hosting, and from there we build a menu around it, complete with fresh garnish, drinks made to order, and a setup that looks like it belongs there. Packages are customizable, so whatever the event calls for, we figure it out together.</p>
+        <p>You handle the guest list. We'll handle the bar.</p>
+      </div>
+      <div class="services">
+        <div class="service-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#8FAE95" stroke-width="1.6"><path d="M8 3 C8 3 6 6 6 9 C6 12.5 9 14 9 17 L9 21 M9 3 L9 3"/><circle cx="9" cy="10" r="0.6" fill="#8FAE95"/><path d="M16 6 L16 3 M13 4.5 L16 6 L19 4.5"/><path d="M12 21 L18 21 M15 21 L15 15 L11 9"/></svg>
+          <div>
+            <h3>Private Parties</h3>
+            <p>Birthdays, holidays, and backyard gatherings all deserve a real bar, built for the people who show up for you.</p>
+          </div>
+        </div>
+        <div class="service-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#8FAE95" stroke-width="1.6"><path d="M12 4 C9 4 7 6.5 7 9 C7 12 12 16 12 16 C12 16 17 12 17 9 C17 6.5 15 4 12 4Z"/><path d="M12 16 L12 21 M9 21 L15 21"/></svg>
+          <div>
+            <h3>Weddings &amp; Showers</h3>
+            <p>A signature drink named for the two of you, poured all night without a second thought.</p>
+          </div>
+        </div>
+        <div class="service-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#8FAE95" stroke-width="1.6"><rect x="4" y="9" width="16" height="11" rx="1"/><path d="M8 9 L8 5 L16 5 L16 9"/></svg>
+          <div>
+            <h3>Corporate &amp; Private Events</h3>
+            <p>Professional service, menus tailored to your brand, and a bar that keeps the room moving.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="gallery" id="gallery">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>From behind the bar</h2>
+        <p class="label">Cocktails, garnish, and the pour</p>
+      </div>
+      <div class="grid-gallery">
+        <figure class="g1"><img src="https://images.unsplash.com/photo-1681732500310-34637949518c?auto=format&fit=crop&w=900&q=80" alt="Bartender pouring drinks into glasses on a bar"></figure>
+        <figure class="g2"><img src="https://images.unsplash.com/photo-1509669803555-fd5edd8d5a41?auto=format&fit=crop&w=900&q=80" alt="Hand holding a cocktail shaker pouring a drink"></figure>
+        <figure class="g3"><img src="https://images.unsplash.com/photo-1605270012917-bf157c5a9541?auto=format&fit=crop&w=700&q=80" alt="Pink cocktail held at a private party"></figure>
+        <figure class="g4"><img src="https://images.unsplash.com/photo-1609951651467-713256d1a3be?auto=format&fit=crop&w=700&q=80" alt="Row of orange cocktails served at a gathering"></figure>
+        <figure class="g5"><img src="https://images.unsplash.com/photo-1527529482837-4698179dc6ce?auto=format&fit=crop&w=700&q=80" alt="Guests raising their cocktails at a party"></figure>
+        <figure class="g6"><img src="https://images.unsplash.com/photo-1566417713940-fe7c737a9ef2?auto=format&fit=crop&w=900&q=80" alt="Pouring liquor into a drinking glass"></figure>
+        <figure class="g7"><img src="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?auto=format&fit=crop&w=900&q=80" alt="Group of guests toasting with wine glasses at a party"></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- MENU -->
+  <section class="menu" id="menu">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Signature Serves</h2>
+        <p class="label">Every menu is custom, consider this a starting pour</p>
+      </div>
+      <div class="menu-list">
+        <div class="menu-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#C4872F" stroke-width="1.6"><path d="M12 3 C9 6 7 9 7 12.5 C7 16.6 9.7 20 12 21 C14.3 20 17 16.6 17 12.5 C17 9 15 6 12 3Z"/></svg>
+          <div>
+            <h3>Heaven's Sour</h3>
+            <p class="ingredients">Bourbon, lemon, egg white, angostura</p>
+          </div>
+          <div class="garnish">Lemon Twist</div>
+        </div>
+        <div class="menu-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#C4872F" stroke-width="1.6"><path d="M12 21 C12 15 12 10 12 6 M12 6 C9 6 7 8 7 10 M12 10 C15 10 17 8 17 6 M12 14 C9.5 14 8 15.5 8 17.5 M12 14 C14.5 14 16 15.5 16 17.5"/></svg>
+          <div>
+            <h3>Citrus &amp; Sage</h3>
+            <p class="ingredients">Gin, muddled sage, grapefruit, soda</p>
+          </div>
+          <div class="garnish">Sage Sprig</div>
+        </div>
+        <div class="menu-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#C4872F" stroke-width="1.6"><circle cx="12" cy="12" r="7"/><path d="M12 5 L12 3 M17 7 L18.5 5.5 M19 12 L21 12"/></svg>
+          <div>
+            <h3>Smoked Old Fashioned</h3>
+            <p class="ingredients">Bourbon, demerara, orange bitters, smoke</p>
+          </div>
+          <div class="garnish">Orange Peel</div>
+        </div>
+        <div class="menu-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#C4872F" stroke-width="1.6"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3.2"/></svg>
+          <div>
+            <h3>Paloma Celestial</h3>
+            <p class="ingredients">Tequila, grapefruit, lime, salted rim</p>
+          </div>
+          <div class="garnish">Lime Wheel</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BAR MENU (PACKAGES) -->
+  <section class="packages" id="packages">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>The Bar Menu</h2>
+        <p class="label">Packages built around your guest count</p>
+      </div>
+      <p class="packages-intro">Every package includes a custom cocktail menu, professional bar tools, fresh garnish, and full setup and cleanup. All packages include a 3 hour minimum, and any additional hours are billed at the package rate.</p>
+
+      <div class="package-grid">
+        <div class="package-card">
+          <p class="label">Up to 25 Guests</p>
+          <h3>The Essentials</h3>
+          <p class="package-price">Starting at $265<span>/ 3 hrs</span></p>
+          <ul>
+            <li>1 bartender</li>
+            <li>Custom cocktail menu</li>
+            <li>Fresh garnish &amp; mixers</li>
+            <li>Full setup &amp; cleanup</li>
+          </ul>
+          <p class="package-extra">Additional hours at $55/hr</p>
+        </div>
+
+        <div class="package-card featured">
+          <p class="label">26 to 50 Guests</p>
+          <h3>The Classic</h3>
+          <p class="package-price">Starting at $395<span>/ 3 hrs</span></p>
+          <ul>
+            <li>1 bartender</li>
+            <li>Custom cocktail menu</li>
+            <li>Fresh garnish &amp; mixers</li>
+            <li>Full setup &amp; cleanup</li>
+          </ul>
+          <p class="package-extra">Additional hours at $65/hr</p>
+        </div>
+
+        <div class="package-card">
+          <p class="label">51 to 75 Guests</p>
+          <h3>The Signature</h3>
+          <p class="package-price">Starting at $615<span>/ 3 hrs</span></p>
+          <ul>
+            <li>1 bartender</li>
+            <li>Custom cocktail menu</li>
+            <li>Fresh garnish &amp; mixers</li>
+            <li>Full setup &amp; cleanup</li>
+          </ul>
+          <p class="package-extra">Additional hours at $75/hr</p>
+        </div>
+
+        <div class="package-card">
+          <p class="label">76+ Guests</p>
+          <h3>Large Events</h3>
+          <p class="package-price">Custom Quote</p>
+          <ul>
+            <li>76 to 120 guests: bartender plus a barback</li>
+            <li>Over 120 guests: 2 bartenders</li>
+            <li>Custom cocktail menu</li>
+            <li>Full setup &amp; cleanup</li>
+          </ul>
+          <p class="package-extra">Contact for a personalized quote</p>
+        </div>
+      </div>
+
+      <p class="packages-note">A deposit secures your date. Travel outside a 20 mile radius may include an additional fee. Weddings, corporate events, and bookings that need more than one bartender are quoted individually, so please <a href="#inquire">reach out</a> for exact pricing.</p>
+
+      <div class="disclaimer">
+        <p><strong>Please note:</strong> clients supply the alcohol for their event. Heavens Bartending provides the bartender, bar setup, ice, mixers, and garnish. See our <a href="#faq">FAQ</a> for details.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq" id="faq">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Good to Know</h2>
+        <p class="label">A few common questions</p>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <h3>Do you provide the alcohol?</h3>
+          <p>No. Florida treats bartending as a service, not a sale, so we bring the bartender, the ice, the mixers, and the garnish, and you supply the spirits, beer, or wine. We are happy to help you figure out exactly what and how much to buy for your guest count.</p>
+        </div>
+        <div class="faq-item">
+          <h3>What is included in a package?</h3>
+          <p>Every package includes a professional bartender, a custom cocktail menu built around your event, bar tools, ice, mixers, fresh garnish, and full setup and cleanup. You supply the alcohol and the guest list, we handle everything else.</p>
+        </div>
+        <div class="faq-item">
+          <h3>How far do you travel?</h3>
+          <p>We travel throughout the Miami area at no extra charge within a 20 mile radius. Events farther out may include a small travel fee, which we will always confirm with you before booking.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Is a deposit required?</h3>
+          <p>Yes. A deposit secures your date and is applied toward your final total. The remaining balance is due before or on the day of your event.</p>
+        </div>
+        <div class="faq-item">
+          <h3>What if I need to cancel or reschedule?</h3>
+          <p>Reach out as soon as you can and we will do our best to move your date. Deposits hold your spot on the calendar, so they are generally not refundable, but we will always work with you.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Do you offer alcohol free options?</h3>
+          <p>Absolutely. We are glad to build alcohol free or low proof drinks into your menu for guests who want something just as crafted, without the alcohol.</p>
+        </div>
+        <div class="faq-item">
+          <h3>How many guests can you serve?</h3>
+          <p>1 bartender comfortably serves up to about 75 guests. For larger events, we bring on a barback for extra support, and once you pass 120 guests, we add a second bartender to keep the line moving.</p>
+        </div>
+        <div class="faq-item">
+          <h3>How do I book?</h3>
+          <p>Fill out the inquiry form below with your date and guest count, and we will follow up to build out your custom package.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INQUIRE -->
+  <section class="inquire" id="inquire">
+    <div class="wrap">
+      <div>
+        <p class="label" style="color:var(--amber-soft);">Let's Book Your Event</p>
+        <h2>Tell us about your event.</h2>
+        <p>Share your name and number and we'll follow up to talk through your date, guest count, and what you'd like poured.</p>
+        <div class="meta">
+          <div style="margin-bottom:8px;"><a href="mailto:heavensbartending@gmail.com">heavensbartending@gmail.com</a></div>
+          <div><a href="https://instagram.com/Heavensbartending" target="_blank" rel="noopener">@Heavensbartending</a></div>
+        </div>
+      </div>
+      <div>
+        <form id="inquireForm" action="https://formspree.io/f/xzdnbldr" method="POST">
+          <div class="field-row">
+            <div>
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" placeholder="Your full name" required>
+            </div>
+            <div>
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone" placeholder="(555) 123 4567" required>
+            </div>
+          </div>
+          <div>
+            <label for="date">Event Date <span style="opacity:0.6;">(optional)</span></label>
+            <input type="text" id="date" name="date" placeholder="e.g. September 12, 2026">
+          </div>
+          <div>
+            <label for="message">A little about the event <span style="opacity:0.6;">(optional)</span></label>
+            <textarea id="message" name="message" placeholder="Guest count, location, type of event..."></textarea>
+          </div>
+          <div class="submit-row">
+            <button type="submit" class="btn" id="submitBtn">Send Inquiry</button>
+          </div>
+          <div class="success-msg" id="successMsg">Thanks! Your inquiry is on its way. We'll be in touch again soon.</div>
+          <div class="success-msg" id="errorMsg" style="border-color:rgba(181,99,106,0.5); color:#E9B4B4;">Something went wrong sending that. Feel free to email heavensbartending@gmail.com directly instead.</div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <a href="#top" class="logo">HEAVENS<span class="dot">•</span>BARTENDING</a>
+    <div class="foot-links">
+      <a href="mailto:heavensbartending@gmail.com">heavensbartending@gmail.com</a>
+      <a href="https://instagram.com/Heavensbartending" target="_blank" rel="noopener">@Heavensbartending</a>
+      <a href="privacy.html">Privacy Policy</a>
+    </div>
+    <div class="copy">&copy; <span id="year"></span> Heavens Bartending</div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Keep the mobile menu panel anchored to the real header height,
+  // so it never overlaps content even if the header's contents wrap.
+  const headerEl = document.querySelector('header');
+  function setHeaderHeight(){
+    document.documentElement.style.setProperty('--header-h', headerEl.offsetHeight + 'px');
+  }
+  setHeaderHeight();
+  window.addEventListener('resize', setHeaderHeight);
+  window.addEventListener('orientationchange', setHeaderHeight);
+
+  // Nav dropdown toggle
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  const navIcon = document.getElementById('navIcon');
+  function setNavOpen(open){
+    navLinks.classList.toggle('open', open);
+    navIcon.innerHTML = open
+      ? '<line x1="4" y1="4" x2="18" y2="18"></line><line x1="18" y1="4" x2="4" y2="18"></line>'
+      : '<line x1="2" y1="6" x2="20" y2="6"></line><line x1="2" y1="11" x2="20" y2="11"></line><line x1="2" y1="16" x2="20" y2="16"></line>';
+  }
+  navToggle.addEventListener('click', (e) => {
+    e.stopPropagation();
+    setNavOpen(!navLinks.classList.contains('open'));
+  });
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setNavOpen(false)));
+  document.addEventListener('click', (e) => {
+    if(navLinks.classList.contains('open') && !navLinks.contains(e.target) && e.target !== navToggle){
+      setNavOpen(false);
+    }
+  });
+  document.addEventListener('keydown', (e) => {
+    if(e.key === 'Escape') setNavOpen(false);
+  });
+
+
+  // Ticker duplicate-safe infinite scroll already has doubled content via markup
+
+  // Inquiry form -> Formspree (submits silently, no email app popup)
+  const form = document.getElementById('inquireForm');
+  const successMsg = document.getElementById('successMsg');
+  const errorMsg = document.getElementById('errorMsg');
+  const submitBtn = document.getElementById('submitBtn');
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    successMsg.classList.remove('show');
+    errorMsg.classList.remove('show');
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending…';
+
+    const formData = new FormData(form);
+
+    fetch(form.action, {
+      method: 'POST',
+      body: formData,
+      headers: { 'Accept': 'application/json' }
+    })
+    .then(response => {
+      if(response.ok){
+        successMsg.classList.add('show');
+        form.reset();
+      } else {
+        errorMsg.classList.add('show');
+      }
+    })
+    .catch(() => {
+      errorMsg.classList.add('show');
+    })
+    .finally(() => {
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Send Inquiry';
+    });
+  });
+</script>
+
+</body>
+</html>
