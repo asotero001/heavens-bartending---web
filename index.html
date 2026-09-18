@@ -8,6 +8,10 @@
 <meta property="og:title" content="Heavens Bartending: Private Cocktail Service">
 <meta property="og:description" content="Full craft cocktail service for private parties, weddings, and events.">
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://heavensbartending.netlify.app/">
+<meta property="og:image" content="https://images.unsplash.com/photo-1765227548954-55aa7cfc498e?auto=format&fit=crop&w=1200&q=80">
+<meta property="og:image:alt" content="Craft cocktail garnished with orange and rosemary">
+<link rel="canonical" href="https://heavensbartending.netlify.app/">
 <meta name="apple-mobile-web-app-title" content="Heavens Bartending">
 <meta name="theme-color" content="#15130E">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='16' fill='%2315130E'/%3E%3Cpath d='M30 28 L70 28 L70 34 L54 58 L54 74 L62 74 L62 80 L38 80 L38 74 L46 74 L46 58 L30 34 Z' fill='%23D69A44'/%3E%3C/svg%3E">
@@ -579,9 +583,10 @@
     transition:border-color .25s ease;
   }
   input::placeholder, textarea::placeholder{color:rgba(247,244,236,0.35);}
-  input:focus, textarea:focus{
+  input:focus, textarea:focus, button:focus-visible, a:focus-visible{
     outline:none;
     border-color:var(--amber);
+    box-shadow:0 0 0 3px rgba(214,154,68,0.35);
   }
   textarea{resize:vertical; min-height:90px;}
 
@@ -651,7 +656,7 @@
 <header>
   <nav class="wrap">
     <a href="#top" class="logo">HEAVENS<span class="dot">•</span>BARTENDING</a>
-    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
       <svg id="navIcon" width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round">
         <line x1="2" y1="6" x2="20" y2="6"></line>
         <line x1="2" y1="11" x2="20" y2="11"></line>
@@ -820,7 +825,7 @@
         <h2>The Bar Menu</h2>
         <p class="label">Packages built around your guest count</p>
       </div>
-      <p class="packages-intro">Every package includes a custom cocktail menu, professional bar tools, fresh garnish, and full setup and cleanup. All packages include a 3 hour minimum, and any additional hours are billed at the package rate.</p>
+      <p class="packages-intro">Every package includes a custom cocktail menu, professional bar tools, fresh garnish, and full setup and cleanup. All packages include a 3 hour minimum. Additional hours are billed at the hourly rate listed on each package.</p>
 
       <div class="package-grid">
         <div class="package-card">
@@ -934,7 +939,7 @@
       <div>
         <p class="label" style="color:var(--amber-soft);">Let's Book Your Event</p>
         <h2>Tell us about your event.</h2>
-        <p>Share your name and number and we'll follow up to talk through your date, guest count, and what you'd like poured.</p>
+        <p>Share your name, email, and number and we'll follow up to talk through your date, guest count, and what you'd like poured. Serving the Miami area and nearby communities.</p>
         <div class="meta">
           <div style="margin-bottom:8px;"><a href="mailto:heavensbartending@gmail.com">heavensbartending@gmail.com</a></div>
           <div><a href="https://instagram.com/Heavensbartending" target="_blank" rel="noopener">@Heavensbartending</a></div>
@@ -953,8 +958,12 @@
             </div>
           </div>
           <div>
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email" required>
+          </div>
+          <div>
             <label for="date">Event Date <span style="opacity:0.6;">(optional)</span></label>
-            <input type="text" id="date" name="date" placeholder="e.g. September 12, 2026">
+            <input type="date" id="date" name="date">
           </div>
           <div>
             <label for="message">A little about the event <span style="opacity:0.6;">(optional)</span></label>
@@ -963,8 +972,9 @@
           <div class="submit-row">
             <button type="submit" class="btn" id="submitBtn">Send Inquiry</button>
           </div>
-          <div class="success-msg" id="successMsg">Thanks! Your inquiry is on its way. We'll be in touch again soon.</div>
-          <div class="success-msg" id="errorMsg" style="border-color:rgba(181,99,106,0.5); color:#E9B4B4;">Something went wrong sending that. Feel free to email heavensbartending@gmail.com directly instead.</div>
+          <div class="success-msg" id="successMsg" aria-live="polite">Thanks! Your inquiry is on its way. We'll be in touch again soon.</div>
+          <div class="success-msg" id="errorMsg" aria-live="polite" style="border-color:rgba(181,99,106,0.5); color:#E9B4B4;">Something went wrong sending that. Feel free to email heavensbartending@gmail.com directly instead.</div>
+          <p class="form-note">By submitting this form, you agree to our <a href="privacy.html">Privacy Policy</a>.</p>
         </form>
       </div>
     </div>
@@ -1003,6 +1013,7 @@
   const navIcon = document.getElementById('navIcon');
   function setNavOpen(open){
     navLinks.classList.toggle('open', open);
+    navToggle.setAttribute('aria-expanded', String(open));
     navIcon.innerHTML = open
       ? '<line x1="4" y1="4" x2="18" y2="18"></line><line x1="18" y1="4" x2="4" y2="18"></line>'
       : '<line x1="2" y1="6" x2="20" y2="6"></line><line x1="2" y1="11" x2="20" y2="11"></line><line x1="2" y1="16" x2="20" y2="16"></line>';
