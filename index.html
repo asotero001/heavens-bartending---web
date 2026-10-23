@@ -44,15 +44,149 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "Heavens Bartending",
-  "description": "Mobile craft cocktail bartending service for weddings, private parties, and corporate events across Miami. Clients supply the alcohol.",
-  "url": "https://heavensbartending.netlify.app/",
-  "image": "https://heavensbartending.netlify.app/og-image.png",
-  "email": "heavensbartending@gmail.com",
-  "sameAs": ["https://instagram.com/Heavensbartending"],
-  "areaServed": { "@type": "City", "name": "Miami, FL" },
-  "priceRange": "$$"
+  "@graph": [
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://heavensbartending.netlify.app/#business",
+      "name": "Heavens Bartending",
+      "description": "Mobile craft cocktail bartending service for weddings, private parties, and corporate events across Miami. Clients supply the alcohol.",
+      "url": "https://heavensbartending.netlify.app/",
+      "image": "https://heavensbartending.netlify.app/og-image.png",
+      "logo": "https://heavensbartending.netlify.app/icon-512.png",
+      "email": "heavensbartending@gmail.com",
+      "sameAs": [
+        "https://instagram.com/Heavensbartending"
+      ],
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Miami, FL"
+        },
+        {
+          "@type": "City",
+          "name": "Miami Beach, FL"
+        },
+        {
+          "@type": "City",
+          "name": "Coral Gables, FL"
+        },
+        {
+          "@type": "City",
+          "name": "Doral, FL"
+        },
+        {
+          "@type": "Place",
+          "name": "Brickell, Miami, FL"
+        },
+        {
+          "@type": "Place",
+          "name": "Coconut Grove, Miami, FL"
+        }
+      ],
+      "knowsAbout": [
+        "Mobile bartending",
+        "Craft cocktails",
+        "Wedding bartending",
+        "Private event bartending",
+        "Corporate event bartending"
+      ],
+      "priceRange": "$$"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://heavensbartending.netlify.app/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Do you provide the alcohol?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. We provide bartending service only and do not sell or supply alcohol. You buy the spirits, beer, and wine, and we bring the bartender, mixers, garnish, and tools. Ice is provided by you or your venue. We'll send you a shopping list with exactly what and how much alcohol and ice to get for your guest count."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What's included in a package?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A planning call, a custom menu, a shopping list, all prep before the event, early setup, bar tools, mixers, fresh garnish, drinks made to order, and full cleanup. You supply the alcohol, ice, and the guest list, and we handle everything else."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you check IDs?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. We only serve guests 21 and over and may ask anyone for a valid ID. Our bartenders can also decline to serve anyone who appears underage or has had too much to drink. It keeps your guests safe and protects you as the host."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does my venue need to approve an outside bartender?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Some venues have rules about outside bartenders or outside alcohol, and some ask for vendor paperwork. Please check with your venue before booking. If they need something from us, let us know and we'll work it out together."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How far do you travel?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We travel throughout the Miami area, including Miami Beach, Brickell, Coral Gables, Coconut Grove, and Doral, at no extra charge within a 20 mile radius. Events farther out may include a travel fee, which we'll always confirm with you before booking."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is a deposit required?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. A deposit secures your date and is applied toward your final total. The remaining balance is due on or before your event day. Exact amounts and due dates are listed in your service agreement."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What if I need to cancel or reschedule?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Reach out as soon as you can and we'll do our best to move your date. Deposits hold your spot on the calendar, so they're generally non-refundable. The full cancellation and reschedule policy is written in your service agreement, so you'll know exactly where you stand before you pay anything."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you offer alcohol free options?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Absolutely. We're glad to build alcohol free or low proof drinks into your menu for guests who want something just as crafted."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How many guests can one bartender serve?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "One bartender comfortably serves up to about 75 guests. For larger events we add a barback, and past 120 guests we add a second bartender to keep the line moving."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What happens to the information I send you?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We only use it to reply about your event. We don't sell it, we don't use cookies or tracking on this site, and your form answers are never saved on your device unless you turn that on yourself. Read the full Privacy Policy."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I book?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Fill out the inquiry form below. We'll get back to you with a quote, then send a service agreement and deposit request to lock in your date."
+          }
+        }
+      ]
+    }
+  ]
 }
 </script>
 <style>
@@ -957,7 +1091,7 @@
         </div>
         <div class="faq-item">
           <h3>How far do you travel?</h3>
-          <p>We travel throughout the Miami area at no extra charge within a 20 mile radius. Events farther out may include a travel fee, which we'll always confirm with you before booking.</p>
+          <p>We travel throughout the Miami area, including Miami Beach, Brickell, Coral Gables, Coconut Grove, and Doral, at no extra charge within a 20 mile radius. Events farther out may include a travel fee, which we'll always confirm with you before booking.</p>
         </div>
         <div class="faq-item">
           <h3>Is a deposit required?</h3>
